@@ -1,0 +1,9 @@
+- name: modify dns server using nmcli 
+  hosts: rocky
+  tasks:
+  - name: modify dns server using nmcli
+    ansible.builtin.command:
+      cmd: nmcli con modify enp0s3 ipv4.dns 8.8.8.8
+  - name: activate connection
+    ansible.builtin.command:
+      cmd: nmcli con up enp0s3      
